@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      >
+    <head>
+        <meta content="UTF-8"></meta>
+        <title>ColShopper</title>
+        <link rel="stylesheet" href="#{request.contextPath}/resources/css/estilos.css"/>
+        <link rel="stylesheet" href="resources/css/responsiveslides.css"/>
+        <link rel="stylesheet" href="resources/css/demo.css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="resources/js/responsiveslides.min.js"></script>
+        <script>
+            // You can also use "$(window).load(function() {"
+            $(function () {
+
+                // Slideshow 3
+                $("#slider3").responsiveSlides({
+                    manualControls: '#slider3-pager',
+                    maxwidth: 540
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <header class="Header">
+            <nav class="Nav">
+                <ul class="Logotipo-left">
+                    <li>
+                        <img id="logo" src="resources/images/logo.png" alt="imagenlogo" width="100px" height="70px"/>
+                    </li>
+                </ul>
+                <ul class="nav-centro">
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Contactanos</a></li>
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">FAQ</a></li>
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Galeria</a></li>
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Planes</a></li>
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Testimonios</a></li>
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Beneficios</a></li>
+                </ul>
+
+                <ul class="Formulario-right">
+
+                    <li class="link-menu link-menureg"><a href="pages/formulario" class="link-menuItem"><span class="icon-enter"></span>Ingresar</a></li>
+                    <li class="link-menu link-menureg"><a href="pages/formulario/Form.xhtml" class="link-menuItem"><span class="icon-clipboard"></span>Registarse</a></li>
+                </ul>
+
+            </nav>
+        </header>
+        <section class="seccion1" id="banner">
+
+
+        </section>
+
+        <video class="video1" loop="loop" autoplay="autoplay" preload="preload">
+            <source src="resources/videos/VideoFinal.mp4" type="video/mp4"/>
+            <source src="resources/videos/VideoFinal.ogg" type="video/ogg"/>
+            <source src="resources/videos/VideoFinal.webm" type="video/webm"/>
+        </video>
+
+        <section class="seccion2">
+
+
+
+
+
+
+            <div>
+                <article class="Image-move">
+                    <figure>
+                        <ul class="rslides" id="slider3">
+                            <li class="imageslide"><img src="resources/images/1.jpg" alt=""/></li>
+                            <li class="imageslide"><img src="resources/images/2.jpg" alt=""/></li>
+                            <li class="imageslide"><img src="resources/images/3.jpg" alt=""/></li>
+                            <li class="imageslide"><img src="resources/images/4.jpg" alt=""/></li>
+
+                            <li class="imageslide"><img src="resources/images/6.jpg" alt=""/></li>
+                        </ul>
+
+                        <ul id="slider3-pager">
+                            <li><a href="#"><img src="resources/images/1_thumps.jpg" alt="" width="40px" height="40px"/></a></li>
+                            <li><a href="#"><img src="resources/images/2_thumps.jpg" alt="" width="40px" height="40px"/></a></li>
+                            <li><a href="#"><img src="resources/images/3_thumps.jpg" alt="" width="40px" height="40px"/></a></li>
+                            <li><a href="#"><img src="resources/images/4_thumps.jpg" alt="" width="40px" height="40px"/></a></li>
+
+                            <li><a href="#"><img src="resources/images/6_thumps.jpg" alt="" width="40px" height="40px"/></a></li>
+                        </ul>                                   
+
+
+                    </figure>
+                </article>
+                <article class="Image-move2">
+                    <figure>
+
+
+                    </figure>
+                </article >
+                <article class="Image-move3">
+                    <figure>
+                        <img src="">
+
+                        </img>
+                    </figure>
+                </article>
+
+            </div>
+
+            <div >
+                <p class="Descripcion1">El sitio Colombiano hecho para colombianos</p>
+
+
+            </div>
+
+
+            <div class=" Mapa" widht="500px" height="400px">
+
+                Aqui va el Mapa  
+            </div>        
+        </section>
+        <section class="seccion3">
+            <div class="botones">
+                <button class="Tienda_openAccount" type="submit"> Abre tu tienda ahora</button>
+                O
+                <button class="Comprador_openAccount" type="submit"> Crea tu perfil de Comprador</button>
+            </div>
+            <article class="Descripcion2">Colshopper te  permite vender y comprar fácilmente vía Web, <br></br>
+                personalizar tu contenido y perfil, si eres un empresario interesado en impulsar sus productos o simplemente un comprador<br></br>
+                que quieres adquirir  productos de tu interés fácilmente, este lugar es para ti</article>
+        </section>
+
+        <footer class=" Piedepagina">
+
+            <div>
+                <p class=" Titulo-empresa">
+                    Si eres empresario
+                </p>
+                <div class="IconosPie Icono1">
+                    <p class="TextoIco">Crea tu cuenta</p>
+                    <span class="icon-key"></span>
+
+                    <span class="icon-clipboard"></span>
+                </div>
+                <div class="IconosPie Icono2">
+                    <p class="TextoIco">Sube tus productos</p>
+                    <span class="icon-upload3"></span>
+                    <span class="icon-clipboard"></span>
+                </div>
+                <div class="IconosPie Icono3">
+                    <p class="TextoIco">Define un sistema de pagos</p>
+                    <span class="icon-banknote"></span>
+                    <span class="icon-clipboard"></span>
+                </div>
+                <div class="IconosPie Icono4">
+                    <p class="TextoIco">Empieza a vender</p>
+                    <span class="icon-sale"></span>
+                    <span class="icon-clipboard"></span>
+                </div>
+            </div>
+
+
+
+            <div>
+
+                <p class="Titulo-comprador">Si eres un comprador</p>
+                <div class="IconosPie Icono5">
+                    <p class="TextoIco">Crea tu cuenta</p>
+                    <span class="icon-key"></span>
+                    <span class="icon-clipboard"></span>
+                </div>
+
+                <div class="IconosPie Icono6">
+                    <p class="TextoIco">Busca productos</p>
+                    <span class="icon-search"></span>
+                    <span class="icon-clipboard"></span>
+                </div>
+
+                <div class="IconosPie Icono7">
+                    <p class="TextoIco">Empieza a comprar</p>
+                    <span class="icon-cart"></span>
+                    <span class="icon-clipboard"></span>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>

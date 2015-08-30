@@ -1,0 +1,313 @@
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?-jp2knn');
+    src:url('../fonts/icomoon.eot?#iefix-jp2knn') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?-jp2knn') format('truetype'),
+        url('../fonts/icomoon.woff?-jp2knn') format('woff'),
+        url('../fonts/icomoon.svg?-jp2knn#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: lighter;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sale:before {
+    content: "\e602";
+    padding:.2em;
+    font-size:4em;
+    border-radius: 2em;
+    background-color: sandybrown;
+}
+.icon-banknote:before {
+    content: "\e603";
+    padding:.2em;
+    font-size:4em;
+    border-radius: 2em;
+    background-color: green;  
+}
+.icon-cart:before {
+    content: "\e604";
+    padding:.2em;
+    font-size:4em;
+    border-radius: 2em;
+    background-color: steelblue;
+}
+.icon-search:before {
+    content: "\e605";
+    padding:.2em;
+    font-size:4em;
+    border-radius: 2em;
+    background-color: grey;
+}
+.icon-key:before {
+    content: "\e606";
+    padding:.2em;
+    font-size:4em;
+    border-radius: 2em;
+    background-color: gold;
+}
+.icon-clipboard:before {
+    content: "\e600";
+    padding:.2em .3em .2em .2em;
+    display:inline-block;
+
+    font-weight: bold;
+}
+
+
+.icon-upload3:before {
+    content: "\e607";
+    padding:.2em;
+    font-size:4em;
+    border-radius: 2em;
+    background-color: silver;
+}
+.icon-enter:before {
+    content: "\e601";
+    padding:.2em .3em .2em .2em;
+    display:inline-block;
+    font-weight: bold;
+}
+
+
+.Ingresar.Registrarse{
+
+
+
+
+}
+
+
+*{
+    margin: 0;
+    padding:0;
+    font-family: helvetica;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    color: #888;
+    font: 14px/20px Helvetica, Arial, sans-serif;
+    text-shadow: 0 -1px 1px #000;
+    
+}
+
+.video1{
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    z-index: -10;
+    visibility: visible;
+    position: relative;
+}
+
+.section2{
+    width: 100%;
+    height: 595px;
+    background-color: white;
+
+}
+
+.Header{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    position: fixed;
+    width: 100%;
+    height: 5em;
+    background-color: transparent;
+    display: table;
+    margin: auto;
+    margin-top: 15px;
+    height: 40px;
+    z-index:3;
+    font-size:1em;
+    background:rgba(53,52,56,0.1);
+    
+
+
+
+}
+
+
+
+
+.Formulario-right{
+
+    float: right;
+    list-style: none;
+    display:inline-block;
+    color:whitesmoke;
+
+
+}
+
+.Logotipo-left{
+    float: left;	
+    padding: 2px;
+    display: inline-block;
+}
+
+.link-menu{
+    display: inline-block;
+    padding: 1em;
+
+
+
+}
+
+.link-menureg{
+
+}
+.link-menuItem{
+    text-decoration: none;
+    color:whitesmoke;
+    font-weight: bold;
+    font-family: sans-serif;
+
+
+}
+
+.link-menuItem:hover{
+    color: skyblue;
+}
+.nav-centro{
+
+    list-style: none;
+    color: #F3F3F3;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+
+
+#body{
+    width: 100%;
+    height:500px;
+}
+
+.registro{
+    text-align: center;
+    color: black;
+    display: block;
+}
+
+
+
+.Descripcion1{
+    text-align: center;
+    font-weight: lighter;
+    font-size: 1.5em;
+
+}
+
+.Seccion3{
+    position:relative;
+
+}
+
+
+.imageslide{
+    max-width: 90%;
+    
+    
+}
+
+.Image-move{
+  
+   
+}
+.Image-move2{
+  
+    
+}
+.Tienda_openAccount{
+    border-radius: .5em;
+    margin:2px;
+    padding:1em;
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    font-family: Calibri;
+    font-size: 1.5em;
+    margin-right: 1em;
+    border:none;
+}
+.Comprador_openAccount{
+    border-radius: .5em;
+    margin:2px;
+    padding:1em; 
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    font-family: Calibri;
+    font-size: 1.5em;
+    margin-left:1em;
+    border:none;
+}
+
+.botones{
+    text-align: center;
+
+}
+
+.Descripcion2{
+    text-align: center;
+    font-weight:lighter;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.Piedepagina{
+    max-width: 100%;
+    text-align: center;margin-bottom: 10em;
+
+}
+.Titulo-empresa {
+    font-weight:bold;
+    font-size:2em;
+    font-family: sans-serif;
+    margin: 2em;
+
+
+}
+.Titulo-comprador{
+    font-weight:bold;
+    font-size:2em;
+    font-family: sans-serif; 
+    margin: 2em;
+}
+.IconosPie{
+    display:inline-block;
+    padding-right: 1em;
+
+}
+.TextoIco{
+    font-size:1.2em;
+    font-family: sans-serif;
+    color:steelblue;
+    display:inline-block;
+    vertical-align: 60%;
+    font-weight: bold;
+
+}
