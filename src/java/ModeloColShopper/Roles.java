@@ -7,6 +7,7 @@ package ModeloColShopper;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -31,7 +32,7 @@ public class Roles implements Serializable {
     private String nombreRol;
 
     @ManyToMany(mappedBy = "idRoles")
-    private Collection<UsuarioEmpresa> usuarioempresa;
+    private List<UsuarioEmpresa> usuarioempresa;
 
     public Roles() {
     }
@@ -56,11 +57,11 @@ public class Roles implements Serializable {
         this.nombreRol = nombreRol;
     }
 
-    public Collection<UsuarioEmpresa> getUsuarioempresa() {
+    public List<UsuarioEmpresa> getUsuarioempresa() {
         return usuarioempresa;
     }
 
-    public void setUsuarioempresa(Collection<UsuarioEmpresa> usuarioempresa) {
+    public void setUsuarioempresa(List<UsuarioEmpresa> usuarioempresa) {
         this.usuarioempresa = usuarioempresa;
     }
 

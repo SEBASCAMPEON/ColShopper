@@ -21,4 +21,62 @@
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
+    <security-constraint>
+        <display-name>Zona de Admin</display-name>
+        <web-resource-collection>
+            <web-resource-name>Admin zone</web-resource-name>
+            <description>Ruta de admin</description>
+            <url-pattern>/faces/pages/Admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Zona Administrador</description>
+            <role-name>Admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>Zona de usuarios estandar</display-name>
+        <web-resource-collection>
+            <web-resource-name>Standar User zone</web-resource-name>
+            <description>ZOna de usuarios estandar</description>
+            <url-pattern>/faces/pages/UserStandar/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Zona Usuarios estandar</description>
+            <role-name>User estandar</role-name>
+            <role-name>Admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>Zona de usuarios empresa</display-name>
+        <web-resource-collection>
+            <web-resource-name>Emp User zone</web-resource-name>
+            <description>Zona de usuarios empresa</description>
+            <url-pattern>/faces/pages/UserEmp/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Zona de usuarios empresarios</description>
+            <role-name>User empresa</role-name>
+            <role-name>Admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>ColShopper-Realm</realm-name>
+        <form-login-config>
+            <form-login-page>/faces/Ingreso.xhtml</form-login-page>
+            <form-error-page>/faces/Ingreso.xhtml</form-error-page>
+        </form-login-config>
+    </login-config>
+    <security-role>
+        <description>Zona Administradores</description>
+        <role-name>Admin</role-name>
+    </security-role>
+    <security-role>
+        <description>Zona Usuarios estandar</description>
+        <role-name>User estandar</role-name>
+    </security-role>
+    <security-role>
+        <description>Zona usuarios empresa</description>
+        <role-name>User empresa</role-name>
+    </security-role>
 </web-app>

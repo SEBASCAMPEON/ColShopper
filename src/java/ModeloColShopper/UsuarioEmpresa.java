@@ -1,9 +1,15 @@
 package ModeloColShopper;
 
+import Controllers.util.JsfUtil;
 import java.io.Serializable;
-import java.util.Collection;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+
 import java.util.List;
-import javax.mail.FetchProfile.Item;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.persistence.Basic;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,8 +20,10 @@ import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
+import static javax.swing.text.StyleConstants.Size;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "USUARIOS_EMPRESA")
@@ -24,24 +32,45 @@ public class UsuarioEmpresa implements Serializable {
     @Id
     @Column(name = "id_usuario_empres")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUsuarioEmpresa;
+    private long idUsuarioEmpresa;
+
+    @Column(name = "numero_documento")
+    @Size(min = 1, max = 30)
+    @Basic(optional = false)
+    private String numeroDoc;
 
     @Column(name = "nombre_usuario")
+    @Size(min = 1, max = 20)
+    @Basic(optional = false)
     private String nombreUsuario;
 
     @Column(name = "apellidos_usuario")
+    @Size(min = 1, max = 20)
+    @Basic(optional = false)
     private String apellidoUser;
 
+    @Size(min = 1, max = 15)
+    @Basic(optional = false)
     private String telefono;
 
+    @Size(min = 1, max = 30)
+    @Basic(optional = false)
     private String direccion;
 
+    @Size(min = 1, max = 30)
+    @Basic(optional = false)
     private String email;
 
+    @Basic(optional = false)
     private char sexo;
 
+    @Size(min = 1, max = 30)
+    @Basic(optional = false)
     private String password;
 
+    @Column(name = "razonsocial")
+    @Size(min = 1, max = 15)
+    @Basic(optional = false)
     private String razonSocial;
 
     @ManyToOne
@@ -49,7 +78,7 @@ public class UsuarioEmpresa implements Serializable {
         @JoinColumn(name = "id_ciudad", referencedColumnName = "id_ciudad"),
         @JoinColumn(name = "id_departamento", referencedColumnName = "id_departamento")
     })
-    private Ciudad idCiudad;
+    private Ciudad ciudad;
 
     @ManyToMany
     @JoinTable(name = "ROLES_USUARIOS",
@@ -57,9 +86,9 @@ public class UsuarioEmpresa implements Serializable {
                     referencedColumnName = "id_usuario_empres"),
             inverseJoinColumns = @JoinColumn(name = "id_roles",
                     referencedColumnName = "id_roles"))
-    private Collection<Roles> idRoles;
 
-    
+    private List<Roles> idRoles;//preguntar
+
     @ManyToOne
     @JoinColumn(name = "id_tipo_documento")
     private TipoDocumento idTipoDocumento;
@@ -67,15 +96,15 @@ public class UsuarioEmpresa implements Serializable {
     public UsuarioEmpresa() {
     }
 
-    public UsuarioEmpresa(int idUsuarioEmpresa) {
+    public UsuarioEmpresa(long idUsuarioEmpresa) {
         this.idUsuarioEmpresa = idUsuarioEmpresa;
     }
 
-    public int getIdUsuarioEmpresa() {
+    public long getIdUsuarioEmpresa() {
         return idUsuarioEmpresa;
     }
 
-    public void setIdUsuarioEmpresa(int idUsuarioEmpresa) {
+    public void setIdUsuarioEmpresa(long idUsuarioEmpresa) {
         this.idUsuarioEmpresa = idUsuarioEmpresa;
     }
 
@@ -132,7 +161,11 @@ public class UsuarioEmpresa implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        try {
+            this.password = JsfUtil.generateDigest(password);
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException ex) {
+            Logger.getLogger(UsuarioEmpresa.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public String getRazonSocial() {
@@ -143,19 +176,19 @@ public class UsuarioEmpresa implements Serializable {
         this.razonSocial = razonSocial;
     }
 
-    public Ciudad getIdCiudad() {
-        return idCiudad;
+    public Ciudad getCiudad() {
+        return ciudad;
     }
 
-    public void setIdCiudad(Ciudad idCiudad) {
-        this.idCiudad = idCiudad;
+    public void setCiudad(Ciudad Ciudad) {
+        this.ciudad = Ciudad;
     }
 
-    public Collection<Roles> getIdRoles() {
+    public List<Roles> getIdRoles() {
         return idRoles;
     }
 
-    public void setIdRoles(Collection<Roles> idRoles) {
+    public void setIdRoles(List<Roles> idRoles) {
         this.idRoles = idRoles;
     }
 
@@ -165,6 +198,14 @@ public class UsuarioEmpresa implements Serializable {
 
     public void setIdTipoDocumento(TipoDocumento idTipoDocumento) {
         this.idTipoDocumento = idTipoDocumento;
+    }
+
+    public String getNumeroDoc() {
+        return numeroDoc;
+    }
+
+    public void setNumeroDoc(String numeroDoc) {
+        this.numeroDoc = numeroDoc;
     }
 
 }

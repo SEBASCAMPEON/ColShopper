@@ -36,8 +36,7 @@ public class CiudadSession {
     }
 
     public List<Ciudad> findAll() {
-        CriteriaQuery cq
-                = entityManager.getCriteriaBuilder().createQuery();
+        CriteriaQuery cq = entityManager.getCriteriaBuilder().createQuery();
         cq.select(cq.from(Ciudad.class));
         return entityManager.createQuery(cq).getResultList();
     }

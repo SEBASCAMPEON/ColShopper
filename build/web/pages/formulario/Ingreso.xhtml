@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <body>
+
+        <ui:composition template="/WEB-INF/template.xhtml">
+
+            <ui:define name="top">
+
+            </ui:define>
+
+            <ui:define name="body">
+                <form jsf:id="IngresoUserForm" class="registro">
+
+                    <input type="text"
+                           placeholder="Usuario"
+                           jsf:id="nombreUsuario"
+                           required="true"
+                           jsf:value="#{loginController.username}">
+                    </input>
+
+                    <input type="password"
+                           placeholder="Contraseña"                       
+                           jsf:id="Nombre"
+                           required="true"
+                           jsf:value="#{loginController.password}">
+                    </input>
+
+                    <button class="ingresar"
+                            type="submit"
+                            value="Iniciar Sesión"
+                            jsf:id="boton"
+                            jsf:action="#{loginController.login}">
+                        Iniciar Sesión
+                    </button>
+
+                </form>
+                <!--<script type="text/javascript">
+                    if (#{loginController.authenticated}) {
+                        window.location = "#{request.contextPath}/faces/index.xhtml";
+                    }
+                </script>
+                -->
+            </ui:define>
+
+            <ui:define name="bottom">
+  <a jsf:outcome="/index.xhtml">Volver al inicio</a>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

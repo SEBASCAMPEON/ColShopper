@@ -30,7 +30,7 @@ public class Ciudad implements Serializable {
     @Column(name = "nombre_ciudad")
     private String nombreCiudad;
 
-    @OneToMany(mappedBy = "idCiudad")//getter and setter listo Llave foranea en tabla Usuarios
+    @OneToMany(mappedBy = "ciudad")//getter and setter listo Llave foranea en tabla Usuarios
     private List<UsuarioEmpresa> usuarioEmpresa;
 
     public Ciudad() {
@@ -64,4 +64,13 @@ public class Ciudad implements Serializable {
     public void setNombreCiudad(String nombreCiudad) {
         this.nombreCiudad = nombreCiudad;
     }
+
+    public List<UsuarioEmpresa> getUsuarioEmpresa() {
+        return usuarioEmpresa;
+    }
+
+    public void setUsuarioEmpresa(List<UsuarioEmpresa> usuarioEmpresa) {
+        this.usuarioEmpresa = usuarioEmpresa;
+    }
+    
 }

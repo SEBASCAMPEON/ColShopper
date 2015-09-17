@@ -5,21 +5,54 @@
       xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-    <head>
+    <head jsf:id="head">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" href="#{request.ContextPath}/resources/css/cssLayout.css"/>
-        <link rel="stylesheet" href="#{request.ContextPath}/resources/css/default.css"
-              <title>sdsadfasd  </title>
-          
+        <link rel="stylesheet" href="#{request.contextPath}/resources/css/cssLayout.css"/>
+        <link rel="stylesheet" href="#{request.contextPath}/resources/css/default.css"/>
+        <link rel="stylesheet" href="#{request.contextPath}/resources/css/estilos.css"/>
+        
+        <title> </title>
+
     </head>
 
-    <body class="body">
+
+    <body class="body" jsf:id="body">
         <div id="top">
-            <ui:insert name="top">Top</ui:insert>
+            <ui:insert name="top">
+               
+
+
+            <nav class="Nav">
+
+                <ul class="Logotipo-left">
+                    <li>
+                        <img id="logo" src="resources/images/logo.png" alt="imagenlogo" width="100px" height="70px"/>
+                    </li>
+                </ul>
+
+                <ul class="nav-centro">
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Contactanos</a></li>
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">FAQ</a></li>
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Galeria</a></li>
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Planes</a></li>
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Testimonios</a></li>
+                    <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Beneficios</a></li>
+                </ul>
+
+                <ul class="Formulario-right2">
+
+                    <li class="link-menu1 link-menu menureg1"><a jsf:outcome="/pages/formulario/Ingreso.xhtml" class="link-menuItem link-menuItem1"><span class="icon-enter"></span>Ingresar</a></li>
+
+                    <li class="link-menu link-menureg"><a jsf:outcome="/pages/formulario/Form.xhtml" class="link-menuItem"><span class="icon-clipboard"></span>Registarse</a></li>
+                </ul>
+
+            </nav>
+            </ui:insert>
         </div>
 
         <div id="content" class="center_content">
-            <ui:insert name="content">Content</ui:insert>
+            <ui:insert name="body">Content</ui:insert>
         </div>
 
         <div id="bottom">

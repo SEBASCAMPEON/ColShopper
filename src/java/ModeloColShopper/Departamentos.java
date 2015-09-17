@@ -59,4 +59,12 @@ public class Departamentos implements Serializable {
         this.idPais = idPais;
     }
 
+    public List<Ciudad> getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(List<Ciudad> ciudad) {
+        this.ciudad = ciudad;
+    }
+
 }

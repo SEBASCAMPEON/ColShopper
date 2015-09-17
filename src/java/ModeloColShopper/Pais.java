@@ -46,4 +46,12 @@ public class Pais implements Serializable {
         this.nombrePais = nombrePais;
     }
 
+    public List<Departamentos> getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(List<Departamentos> departamento) {
+        this.departamento = departamento;
+    }
+
 }

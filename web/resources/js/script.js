@@ -1,31 +1,23 @@
-$(document).ready(function(){
+$(document).ready(main);
 
-	var flag = false;
-	var scroll;
+var contador = 1;
 
-	$(window).scroll(function(){
-		scroll = $(window).scrollTop();
+function main(){
+	$('.menu_bar').click(function(){
+		// $('nav').toggle(); 
 
-		if(scroll > 200){
-			if (!flag) {
-			$("#logo").css({"margin-top": "-5px", "width": "50px", "height": "50px"});
-
-			$("header").css({"background-color": "#3C3C3C"})
-			flag =  true;
-			}
-
-
-		}else{
-			if (flag) {
-			$("#logo").css({"margin-top": "150px", "width": "250px", "height": "250px"});
-
-			$("header").css({"background-color": "#3C3C3C"})
-			flag = false;
-
-			};
-
+		if(contador == 1){
+			$('nav').animate({
+				left: '0'
+			});
+			contador = 0;
+		} else {
+			contador = 1;
+			$('nav').animate({
+				left: '-100%'
+			});
 		}
 
-
 	});
-});
+
+};      

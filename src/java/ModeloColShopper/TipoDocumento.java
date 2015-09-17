@@ -20,8 +20,8 @@ public class TipoDocumento {
     @Column(name = "id_tipo_documento")
     private int idTipoDocumento;
 
-    @Column(name = "tipo_documento")
-    private String tipoDocumento;
+    @Column(name = "descripcion")
+    private String descripcion;
 
     @OneToMany(mappedBy = "idTipoDocumento")
     private List<UsuarioEmpresa> usuarioEmpresa;
@@ -41,14 +41,15 @@ public class TipoDocumento {
         this.idTipoDocumento = idTipoDocumento;
     }
 
-    public String getTipoDocumento() {
-        return tipoDocumento;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setTipoDocumento(String tipoDocumento) {
-        this.tipoDocumento = tipoDocumento;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
+   
     public List<UsuarioEmpresa> getUsuarioEmpresa() {
         return usuarioEmpresa;
     }

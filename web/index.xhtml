@@ -1,17 +1,25 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      >
-    <head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <head jsf:id="head">
         <meta content="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
         <title>ColShopper</title>
         <link rel="stylesheet" href="#{request.contextPath}/resources/css/estilos.css"/>
         <link rel="stylesheet" href="resources/css/responsiveslides.css"/>
         <link rel="stylesheet" href="resources/css/demo.css"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="resources/js/responsiveslides.min.js"></script>
-        <script>
+        <script src="#{request.contextPath}/resources/js/script.js"></script>
+        <script type="text/javascript">
+
+
+
             // You can also use "$(window).load(function() {"
             $(function () {
 
@@ -23,15 +31,28 @@
             });
         </script>
     </head>
-    <body>
+    <body class="body" jsf:id="body">
 
         <header class="Header">
+            <div class="menu_bar">
+                <a href="#" class="bt-menu"><span class="icon-list2"></span>Menu</a>
+            </div>
+
+            <ul class="Link-barra"> 
+
+
+                <li class="link-menu link-menureg1"><a jsf:outcome="/pages/formulario/Ingreso.xhtml" class="link-menuItem1"><span class="icon-enter"></span>Ingresar</a></li>
+                <li class="link-menu link-menureg2"><a jsf:outcome="/pages/formulario/Form.xhtml" class="link-menuItem2"><span class="icon-clipboard"></span>Registarse</a></li>
+            </ul>
+
             <nav class="Nav">
+
                 <ul class="Logotipo-left">
                     <li>
                         <img id="logo" src="resources/images/logo.png" alt="imagenlogo" width="100px" height="70px"/>
                     </li>
                 </ul>
+
                 <ul class="nav-centro">
                     <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Contactanos</a></li>
                     <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">FAQ</a></li>
@@ -41,18 +62,16 @@
                     <li class="link-menu"><a href="www.elsword.com" class="link-menuItem">Beneficios</a></li>
                 </ul>
 
-                <ul class="Formulario-right">
+                <ul class="Formulario-right2">
 
-                    <li class="link-menu link-menureg"><a href="pages/formulario" class="link-menuItem"><span class="icon-enter"></span>Ingresar</a></li>
-                    <li class="link-menu link-menureg"><a href="pages/formulario/Form.xhtml" class="link-menuItem"><span class="icon-clipboard"></span>Registarse</a></li>
+                    <li class="link-menu link-menu menureg"><a jsf:outcome="/pages/formulario/Ingreso.xhtml" class="link-menuItem"><span class="icon-enter"></span>Ingresar</a></li>
+
+                    <li class="link-menu link-menureg"><a jsf:outcome="/pages/formulario/Form.xhtml" class="link-menuItem"><span class="icon-clipboard"></span>Registarse</a></li>
                 </ul>
 
             </nav>
         </header>
-        <section class="seccion1" id="banner">
 
-
-        </section>
 
         <video class="video1" loop="loop" autoplay="autoplay" preload="preload">
             <source src="resources/videos/VideoFinal.mp4" type="video/mp4"/>
@@ -140,22 +159,21 @@
                     <p class="TextoIco">Crea tu cuenta</p>
                     <span class="icon-key"></span>
 
-                    <span class="icon-clipboard"></span>
+                    <span class="icon-arrow-right"></span>
                 </div>
                 <div class="IconosPie Icono2">
                     <p class="TextoIco">Sube tus productos</p>
                     <span class="icon-upload3"></span>
-                    <span class="icon-clipboard"></span>
+                    <span class="icon-arrow-right"></span>
                 </div>
                 <div class="IconosPie Icono3">
                     <p class="TextoIco">Define un sistema de pagos</p>
                     <span class="icon-banknote"></span>
-                    <span class="icon-clipboard"></span>
+                    <span class="icon-arrow-right"></span>
                 </div>
                 <div class="IconosPie Icono4">
                     <p class="TextoIco">Empieza a vender</p>
                     <span class="icon-sale"></span>
-                    <span class="icon-clipboard"></span>
                 </div>
             </div>
 
@@ -167,19 +185,18 @@
                 <div class="IconosPie Icono5">
                     <p class="TextoIco">Crea tu cuenta</p>
                     <span class="icon-key"></span>
-                    <span class="icon-clipboard"></span>
+                    <span class="icon-arrow-right"></span>
                 </div>
 
                 <div class="IconosPie Icono6">
                     <p class="TextoIco">Busca productos</p>
                     <span class="icon-search"></span>
-                    <span class="icon-clipboard"></span>
+                    <span class="icon-arrow-right"></span>
                 </div>
 
                 <div class="IconosPie Icono7">
                     <p class="TextoIco">Empieza a comprar</p>
                     <span class="icon-cart"></span>
-                    <span class="icon-clipboard"></span>
                 </div>
             </div>
         </footer>

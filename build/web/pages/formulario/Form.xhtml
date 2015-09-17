@@ -8,122 +8,132 @@
 
 
 
-    <ui:composition template="./../../WEB-INF/template.xhtml">
+    <ui:composition template="/WEB-INF/template.xhtml">
 
+        
         <ui:define name="top">
             Formulario Registro
 
         </ui:define>
 
         <ui:define name="body">
+            <h:messages/>
             <form jsf:id="CreateUserForm" class="registro">
-                <label> IdEmpresaUsuario</label>
 
-                <input type="number"
-                       placeholder="idEmpresaUsuario"
-                       jsf:id="IdUsuarioEmpresa"
-                       required="true">
-                </input>
 
-                <label> Nombre</label>
                 <input type="text"
                        placeholder="Nombre"                       
-                       jsf:id="Nombre"
-                       required="true">
+                       jsf:id="nombre"
+                       require="true"
+                       jsf:value="#{usuariosController.currentUsuarios.nombreUsuario}">
                 </input>
 
-                <label> Apellido </label>
                 <input type="text"
                        placeholder="Apellido"                       
-                       jsf:id="Apellidos"
-                       required="true">
+                       jsf:id="apellidos"
+                       require="true"
+                       jsf:value="#{usuariosController.currentUsuarios.apellidoUser}">
+                </input>
+                <select jsf:value="#{usuariosController.currentUsuarios.idTipoDocumento}"
+                        required="true"
+                        size="1">
+                    <f:selectItem itemLabel="Tipo Documento"/>
+                    <f:selectItem itemLabel="CC" itemValue="CC"/>
+                    <f:selectItem itemLabel="TI" itemValue="TI"/>
+                </select>
+
+                <input type="text"
+                       placeholder="Numero documento"                       
+                       jsf:id="numeroDocumento"
+                       require="true"
+                       jsf:value="#{usuariosController.currentUsuarios.numeroDoc}">
                 </input>
 
-
-                <label>Sexo</label>
-                <select 
-                    size="1"
-                    required="true">
-                    <f:selectItems itemLabel="Seleccione uno.."/>
+                <select jsf:value="#{usuariosController.currentUsuarios.sexo}"
+                        require="true"
+                        size="1">
+                    <f:selectItem itemLabel="Sexo"/>
                     <f:selectItem itemLabel="Femenino" itemValue="F"/>
                     <f:selectItem itemLabel="Masculino" itemValue="M"/>
                 </select>
 
-                <label> Direccion</label>
-                <input type="text"
-                       placeholder="direccion"
 
-                       jsf:id="Direccion"
-                       required="true">
+                <input type="text"
+                       placeholder="Direccion"
+                       class="Userform"
+                       jsf:id="direccion"
+                       require="true"
+                       jsf:value="#{usuariosController.currentUsuarios.direccion}">
                 </input>
 
-                <label> Email</label>
-                <input type="text"
-                       placeholder="email"
 
-                       jsf:id="Email"
-                       required="true">
+                <input type="tel"
+                       placeholder="Telefono"
+                       class="Userform"
+                       jsf:id="telefono"
+                       require="true"
+                       jsf:value="#{usuariosController.currentUsuarios.telefono}">
                 </input>
 
-                <label> Contraseña</label>
-                <input type="text"
-                       placeholder="contraseña"
 
-                       jsf:id="diametro"
-                       required="true">
+                <input type="email"
+                       placeholder="Email"
+                       class="Userform"
+                       jsf:id="email"
+                       require="true"
+                       jsf:value="#{usuariosController.currentUsuarios.email}">
                 </input>
 
-                <label>Nit Empresa</label>
-                <input type="text"
-                       placeholder="Nit empresa"
 
-                       jsf:id="nitEmpresa"
-                       required="true">
-                </input>
-
-                <label> Razon Social</label>
                 <input type="text"
                        placeholder="Razon social"
-
-                       jsf:id="razon social"
-                       required="true">
+                       class="Userform"
+                       jsf:id="razonSocial"
+                       require="true"
+                       jsf:value="#{usuariosController.currentUsuarios.razonSocial}">
                 </input>
 
-                <label> Direccion Empresa</label>
-                <input type="text"
-                       placeholder="Direccion Empresa"
-                       
-                       jsf:id="Direccion empresa"
-                       required="true">
+                <select jsf:value="#{usuariosController.ciudad}" required="true" size="1">
+
+                    <f:selectItem itemLabel="Ciudad"/>
+                    <f:selectItems value="#{ciudadController.itemsCiudad}"
+                                   var="idCiudad"
+                                   itemValue="#{idCiudad.idCiudad},#{idCiudad.idDepartamento.idDepartamento}"
+                                   itemLabel="#{idCiudad.nombreCiudad}"/>             
+                </select>
+
+                <input type="password"
+                       placeholder="contraseña"
+                       class="Userform"
+                       jsf:id="password"
+                       require="true"
+                       jsf:value="#{usuariosController.currentUsuarios.password}">
                 </input>
-                
-                <label> Email empresa</label>
-                <input type="text"
-                       placeholder="Email Empresa"
-                       
-                       jsf:id="Email empresa"
-                       required="true">
-                </input>
-                
-                <label> Ciudad</label>
-                <input type="text"
-                       placeholder="Ciudad"
-                       
-                       jsf:id="Ciudad"
-                       required="true">
-                </input>
-                
+
+                <select jsf:value="#{usuariosController.currentUsuarios.idRoles}" required="false" size="1">
+
+                    <f:selectItem itemLabel="Roles"/>
+                    <f:selectItems value="#{rolesController.itemsRoles}"
+                                   var="Roles"
+                                   itemValue="#{Roles}"
+                                   itemLabel="#{Roles.nombreRol}"/>             
+                </select>
+
+
+
                 <button class="guardar"
-                       type="submit"
-                       value="Guardar"
-                       jsf:id="boton">
-                GUARDAR 
+                        type="submit"
+                        value="Guardar"
+                        jsf:id="boton"
+                        jsf:action="#{usuariosController.create}">
+                    GUARDAR 
                 </button>
+
             </form>
         </ui:define>
 
         <ui:define name="bottom">
-Bottom
+            <a jsf:outcome="/index.xhtml">Volver al inicio</a>
         </ui:define>
 
     </ui:composition>
