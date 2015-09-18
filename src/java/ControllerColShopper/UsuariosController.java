@@ -4,6 +4,7 @@ package ControllerColShopper;
 import ModeloColShopper.Ciudad;
 import ModeloColShopper.Departamentos;
 import ModeloColShopper.Roles;
+import ModeloColShopper.TipoDocumento;
 import ModeloColShopper.UsuarioEmpresa;
 import SessionColShopper.UsuarioEmpresaSession;
 import java.io.Serializable;
@@ -25,6 +26,7 @@ public class UsuariosController implements Serializable {
     private int idDepartamento;
     private String ciudad;
     private List<Roles> listaRoles;
+    private int idTipoDocumento;
     private List<UsuarioEmpresa> itemsUsuarios = null;
 
     public UsuariosController() {
@@ -70,6 +72,7 @@ public class UsuariosController implements Serializable {
         try {
             currentUsuarios.setCiudad(new Ciudad(idCiudad, new Departamentos(idDepartamento)));
             /*currentUsuarios.setIdRoles(listaRoles);*/
+            currentUsuarios.setIdTipoDocumento(new TipoDocumento(idTipoDocumento));
             getUsuarioEmpresaSession().create(currentUsuarios);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
